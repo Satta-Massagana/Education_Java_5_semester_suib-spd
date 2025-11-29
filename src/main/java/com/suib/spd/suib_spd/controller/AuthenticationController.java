@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Tag(name = "Аутентификация", description = "Управление записями аутентификации")
+@Tag(name = "Аутентификация")
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor

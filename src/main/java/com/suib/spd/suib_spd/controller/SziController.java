@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@Tag(name = "СЗИ", description = "Управление сетевыми устройствами по SSH")
+@Tag(name = "СЗИ")
 @RestController
 @RequestMapping("/api/szi")
 @RequiredArgsConstructor

@@ -1,5 +1,6 @@
 package com.suib.spd.suib_spd.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ public class AuthenticationRecord {
 
     @ManyToOne
     @JoinColumn(name = "userId")
+    @JsonIgnoreProperties({"authRecords"})
     private User user;
 
     private LocalDateTime authTimestamp;

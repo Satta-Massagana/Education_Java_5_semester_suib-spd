@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Tag(name = "Трафик", description = "Мониторинг сетевого трафика и анализ подозрительной активности")
+@Tag(name = "Трафик")
 @RestController
 @RequestMapping("/api/traffic")
 @RequiredArgsConstructor

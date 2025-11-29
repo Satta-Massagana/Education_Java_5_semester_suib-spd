@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Tag(name = "Инциденты", description = "Управление инцидентами информационной безопасности")
+@Tag(name = "Инциденты")
 @RestController
 @RequestMapping("/api/incidents")
 @RequiredArgsConstructor

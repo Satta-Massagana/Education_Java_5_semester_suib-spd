@@ -5,6 +5,9 @@ import com.suib.spd.suib_spd.repository.AuthenticationRecordRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -14,6 +17,8 @@ public class AuthenticationService {
     private final AuthenticationRecordRepository authRepo;
 
     public List<AuthenticationRecord> getRecentAuthRecords() {
-        return authRepo.findAll(Sort.by(Sort.Direction.DESC, "authTimestamp"));
+        Pageable pageable = PageRequest.of(0, 10, Sort.by(Sort.Direction.DESC, "authTimestamp"));
+        Page<AuthenticationRecord> page = authRepo.findAll(pageable);
+        return page.getContent();
     }
 }
