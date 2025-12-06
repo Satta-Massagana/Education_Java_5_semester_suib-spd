@@ -1,5 +1,6 @@
 package com.suib.spd.suib_spd.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class Incident {
     private String severity;
     private String status;
 
-    @OneToMany(mappedBy = "incident", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "incident", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Notification> notifications = new ArrayList<>();
 }
