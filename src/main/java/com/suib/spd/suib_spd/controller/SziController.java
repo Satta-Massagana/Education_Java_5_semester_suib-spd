@@ -33,7 +33,7 @@ public class SziController {
                           "port": 2222,
                           "username": "admin",
                           "password": "pass",
-                          "command": "ip address print"
+                          "command": "ip address print, ip address add interface=lo address=10.1.1.1/32"
                         }
                         """)
             Map<String, Object> request) {

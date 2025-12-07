@@ -5,6 +5,7 @@ import com.suib.spd.suib_spd.repository.IncidentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -14,6 +15,7 @@ public class IncidentService {
 
     public Incident createIncident(Incident incident) {
         incident.setStatus("NEW");
+        incident.setTimestamp(LocalDateTime.now());
         return incidentRepo.save(incident);
     }
 
